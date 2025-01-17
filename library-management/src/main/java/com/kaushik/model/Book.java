@@ -20,6 +20,10 @@ public class Book {
         this.borrowedBy = borrowedBy;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public Book(String Name, String ISBN, String Author, String Category, double Price, String path,
             boolean available, String id) {
         this.Name = Name;

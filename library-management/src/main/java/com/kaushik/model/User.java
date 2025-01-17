@@ -1,5 +1,7 @@
 package com.kaushik.model;
 
+import at.favre.lib.crypto.bcrypt.BCrypt.HashData;
+
 abstract class User {
     String name;
     String userId;
@@ -15,6 +17,14 @@ abstract class User {
 
     public void activate() {
         this.isDeleted = false;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public boolean activationStatus() {

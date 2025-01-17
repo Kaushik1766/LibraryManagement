@@ -1,1 +1,7 @@
+com\kaushik\model\Student.class
+com\kaushik\database\Database.class
+com\kaushik\service\Management.class
+com\kaushik\model\Admin.class
+com\kaushik\model\Book.class
+com\kaushik\model\User.class
 com\kaushik\Main.class

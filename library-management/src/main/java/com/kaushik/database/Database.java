@@ -22,14 +22,6 @@ public class Database {
         }
     }
 
-    public void addBook(Book book, Object user) throws Exception {
-        if ((user instanceof Admin)) {
-            Books.add(book);
-        } else {
-            throw new Exception("User is not an admin.");
-        }
-    }
-
     public Object searchUser(String userId, String role) throws Exception {
         if (role == "Admin") {
             for (Admin ad : Admins) {
@@ -40,6 +32,23 @@ public class Database {
         } else {
             for (Student std : Students) {
                 if (std.getUserId() == userId && !std.activationStatus()) {
+                    return std;
+                }
+            }
+        }
+        throw new Exception("User not found.");
+    }
+
+    public Object searchUserByEmail(String email, String role) throws Exception {
+        if (role == "Admin") {
+            for (Admin ad : Admins) {
+                if (ad.getEmail() == email && !ad.activationStatus()) {
+                    return ad;
+                }
+            }
+        } else {
+            for (Student std : Students) {
+                if (std.getEmail() == email && !std.activationStatus()) {
                     return std;
                 }
             }
@@ -64,5 +73,31 @@ public class Database {
             }
         }
         throw new Exception("User not found.");
+    }
+
+    public String getLastUserId() {
+        if (Students.size() == 0) {
+            return "1";
+        } else {
+            String lastId = Students.get(Students.size() - 1).getUserId();
+            return String.valueOf(Integer.parseInt(lastId) + 1);
+        }
+    }
+
+    public void addBook(Book book, Object user) throws Exception {
+        if ((user instanceof Admin)) {
+            Books.add(book);
+        } else {
+            throw new Exception("User is not an admin.");
+        }
+    }
+
+    public Book searchBook(String bookId) throws Exception {
+        for (Book b : Books) {
+            if (b.getId() == bookId) {
+                return b;
+            }
+        }
+        throw new Exception("Book with the provided bookId does not exist.");
     }
 }

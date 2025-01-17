@@ -1,5 +1,7 @@
 package com.kaushik.model;
 
+import at.favre.lib.crypto.bcrypt.BCrypt.HashData;
+
 public class Student extends User {
 
     public Student(String name, String userId, String password, String email) {
@@ -11,6 +13,10 @@ public class Student extends User {
 
     public String getUserId() {
         return userId;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public void displayInfo(String userId) {

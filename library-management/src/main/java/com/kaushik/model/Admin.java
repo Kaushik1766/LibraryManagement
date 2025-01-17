@@ -1,5 +1,7 @@
 package com.kaushik.model;
 
+import at.favre.lib.crypto.bcrypt.BCrypt.HashData;
+
 public class Admin extends User {
     public Admin(String name, String userId, String password, String email) {
         this.name = name;
