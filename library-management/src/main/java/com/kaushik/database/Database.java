@@ -84,6 +84,15 @@ public class Database {
         }
     }
 
+    public String getLastBookId() {
+        if (Books.size() == 0) {
+            return "1";
+        } else {
+            String lastId = Books.get(Books.size() - 1).getId();
+            return String.valueOf(Integer.parseInt(lastId) + 1);
+        }
+    }
+
     public void addBook(Book book, Object user) throws Exception {
         if ((user instanceof Admin)) {
             Books.add(book);

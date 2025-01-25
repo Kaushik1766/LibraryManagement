@@ -24,6 +24,10 @@ public class Book {
         return id;
     }
 
+    public String getName() {
+        return Name;
+    }
+
     public Book(String Name, String ISBN, String Author, String Category, double Price, String path,
             boolean available, String id) {
         this.Name = Name;
