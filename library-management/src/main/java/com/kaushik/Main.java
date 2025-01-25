@@ -7,8 +7,8 @@ import com.kaushik.service.Management;
 
 public class Main {
     public static void main(String[] args) {
-        Management M = new Management();
         Scanner sc = new Scanner(System.in);
+        Management M = new Management(sc);
         while (true) {
             if (M.getUser() == null) {
                 System.out.println("1. Register\n2. Login\n3. Signout\n0. Exit\n");

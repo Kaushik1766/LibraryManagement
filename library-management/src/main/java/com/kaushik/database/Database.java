@@ -8,9 +8,9 @@ import com.kaushik.model.Admin;
 import com.kaushik.model.Book;
 
 public class Database {
-    ArrayList<Admin> Admins;
-    ArrayList<Student> Students;
-    ArrayList<Book> Books;
+    ArrayList<Admin> Admins = new ArrayList<Admin>();
+    ArrayList<Student> Students = new ArrayList<Student>();
+    ArrayList<Book> Books = new ArrayList<Book>();
 
     public void addUser(Object user) throws Exception {
         if (user instanceof Admin) {
@@ -23,15 +23,15 @@ public class Database {
     }
 
     public Object searchUser(String userId, String role) throws Exception {
-        if (role == "Admin") {
+        if (role.equals("admin")) {
             for (Admin ad : Admins) {
-                if (ad.getUserId() == userId && !ad.activationStatus()) {
+                if (ad.getUserId().equals(userId) && !ad.activationStatus()) {
                     return ad;
                 }
             }
         } else {
             for (Student std : Students) {
-                if (std.getUserId() == userId && !std.activationStatus()) {
+                if (std.getUserId().equals(userId) && !std.activationStatus()) {
                     return std;
                 }
             }
@@ -40,15 +40,15 @@ public class Database {
     }
 
     public Object searchUserByEmail(String email, String role) throws Exception {
-        if (role == "Admin") {
+        if (role.equals("admin")) {
             for (Admin ad : Admins) {
-                if (ad.getEmail() == email && !ad.activationStatus()) {
+                if (ad.getEmail().equals(email) && !ad.activationStatus()) {
                     return ad;
                 }
             }
         } else {
             for (Student std : Students) {
-                if (std.getEmail() == email && !std.activationStatus()) {
+                if (std.getEmail().equals(email) && !std.activationStatus()) {
                     return std;
                 }
             }
@@ -57,16 +57,16 @@ public class Database {
     }
 
     public void deleteUser(String userId, String role) throws Exception {
-        if (role == "Admin") {
+        if (role.equals("admin")) {
             for (Admin ad : Admins) {
-                if (ad.getUserId() == userId && !ad.activationStatus()) {
+                if (ad.getUserId().equals(userId) && !ad.activationStatus()) {
                     ad.deactivate();
                     return;
                 }
             }
         } else {
             for (Student std : Students) {
-                if (std.getUserId() == userId && !std.activationStatus()) {
+                if (std.getUserId().equals(userId) && !std.activationStatus()) {
                     std.deactivate();
                     return;
                 }
@@ -103,7 +103,7 @@ public class Database {
 
     public Book searchBook(String bookId) throws Exception {
         for (Book b : Books) {
-            if (b.getId() == bookId) {
+            if (b.getId().equals(bookId)) {
                 return b;
             }
         }

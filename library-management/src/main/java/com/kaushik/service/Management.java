@@ -10,9 +10,11 @@ import com.kaushik.model.Student;
 public class Management {
     private Database db;
     private Object user = null;
+    private Scanner sc;
     // private String secret = "asdfasdf";
 
-    public Management() {
+    public Management(Scanner sc) {
+        this.sc = sc;
         this.db = new Database();
     }
 
@@ -21,7 +23,7 @@ public class Management {
     }
 
     public void borrow() {
-        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
         System.out.println("Enter Book Id: ");
         String bookId = sc.nextLine();
         try {
@@ -39,13 +41,11 @@ public class Management {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            sc.close();
         }
     }
 
     public void returnBook() {
-        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
         System.out.println("Enter Book Id: ");
         String bookId = sc.nextLine();
         try {
@@ -63,13 +63,11 @@ public class Management {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            sc.close();
         }
     }
 
     public void addBook() {
-        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
         System.out.println("Enter Book Name: ");
         String name = sc.nextLine();
         System.out.println("Enter ISBN: ");
@@ -100,7 +98,7 @@ public class Management {
     }
 
     public void registerUser() {
-        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
         System.out.println("Enter Name: ");
         String name = sc.nextLine();
         System.out.println("Enter Email: ");
@@ -113,7 +111,7 @@ public class Management {
 
         try {
             String lastId = db.getLastUserId();
-            if (role == "admin") {
+            if (role.equals("admin")) {
                 Admin admin = new Admin(name, lastId, password, email);
                 db.addUser(admin);
             } else {
@@ -123,13 +121,11 @@ public class Management {
             System.out.println("Registered Successfully.");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            sc.close();
         }
     }
 
     public void login() {
-        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
         System.out.println("Enter Email: ");
         String email = sc.nextLine();
         System.out.println("Enter Password: ");
@@ -139,9 +135,9 @@ public class Management {
         role.toLowerCase();
 
         try {
-            if (role == "admin") {
+            if (role.equals("admin")) {
                 Admin admin = (Admin) db.searchUserByEmail(email, role);
-                if (admin.getPassword() == password) {
+                if (admin.getPassword().equals(password)) {
                     user = admin;
                     System.out.println("Logged in successfully.");
                 } else {
@@ -149,7 +145,7 @@ public class Management {
                 }
             } else {
                 Student student = (Student) db.searchUserByEmail(email, role);
-                if (student.getPassword() == password) {
+                if (student.getPassword().equals(password)) {
                     user = student;
                     System.out.println("Logged in successfully.");
                 } else {
@@ -158,13 +154,11 @@ public class Management {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            sc.close();
         }
     }
 
     public void SearchBook() {
-        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
         System.out.println("Enter Book Id: ");
         String bookId = sc.nextLine();
         try {
@@ -172,10 +166,7 @@ public class Management {
             System.out.println("Book found: " + b.getName());
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            sc.close();
         }
-
     }
 
     public void logout() {
