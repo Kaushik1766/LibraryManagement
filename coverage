@@ -1,0 +1,18 @@
+mode: set
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:15.56,19.95 2 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:19.95,21.3 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:22.2,22.16 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:22.16,24.3 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:26.2,26.24 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:26.24,28.3 1 0
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:30.2,30.42 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:30.42,32.3 1 0
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:34.2,34.70 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:37.138,38.54 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:38.54,42.18 3 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:42.18,45.4 2 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:48.3,48.48 1 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:48.48,51.4 2 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:53.3,56.17 3 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:56.17,59.4 2 1
+github.com/Kaushik1766/LibraryManagement/internal/middleware/auth_middleware.go:61.3,61.18 1 1
